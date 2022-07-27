@@ -1,0 +1,23 @@
+import win32com.client as win32
+import csv
+
+# integração com o outlook
+outlook = win32.Dispatch('outlook.application')
+email = outlook.CreateItem(0)
+
+# Email destindo definido
+email.To = "mateusflorencioribeiro@gmail.com"
+# Assunto do Email
+email.Subject = "Informações da Maratona Carioca"
+#C.c
+email.Cc = "mateusflorenciopirata@gmail.com"
+# Texto do corpo do Email
+email.HTMLBody = f"""
+Teste email
+    """
+
+# Envio do Email
+email.Send()
+print("Email enviado com sucesso")
+print("--------------------------------------------")
+print("\nEnvios Concluidos")
